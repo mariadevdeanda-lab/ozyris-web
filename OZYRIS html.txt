@@ -141,7 +141,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <div class="band"><section class="final"><div class="wrap">
 <h2>Lleva tu negocio con OZYRIS POS.</h2>
 <p>Pide una demo y mira cómo funciona con tus propios productos.</p>
-<a class="btn" href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20una%20demo%20de%20OZYRIS%20POS" target="_blank" rel="noopener">Pedir una demo por WhatsApp</a>
+<a class="btn" href="https://wa.me/524741120595?text=Hola%2C%20quiero%20una%20demo%20de%20OZYRIS%20POS" target="_blank" rel="noopener">Pedir una demo por WhatsApp</a>
 </div></section></div>
 </main>
 
