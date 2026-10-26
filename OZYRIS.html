@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OZYRIS POS | Punto de venta sin mensualidades</title>
+<meta name="description" content="OZYRIS POS: punto de venta para comercios, inventario y operación diaria. Funciona sin internet, con licencia de por vida y sin mensualidades.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F9D62'/%3E%3Crect x='16' y='10' width='32' height='10' rx='2' fill='white'/%3E%3Crect x='9' y='24' width='46' height='22' rx='4' fill='white'/%3E%3Crect x='9' y='50' width='46' height='6' rx='3' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10241B;--soft:#4B6357;--green:#1F9D62;--deep:#14704A;--mint:#E8F4EC;--paper:#FAFBF8;--line:#D5E4DA}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3,.brand{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;font-size:25px;text-decoration:none}
+.brand span{color:var(--green)}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:500}
+.btn:hover{background:var(--deep)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.alt:hover{background:var(--mint)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:48px 0 72px}
+.hero h1{font-size:clamp(38px,6vw,62px)}
+.hero p{margin:20px 0 28px;color:var(--soft);font-size:19px;max-width:30em}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.ticket{background:#fff;border:1.5px solid var(--ink);border-radius:6px;padding:24px 22px;max-width:340px;justify-self:center;width:100%;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;transform:rotate(2deg);box-shadow:8px 8px 0 var(--green)}
+.ticket h3{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;text-align:center;margin-bottom:2px}
+.ticket small{display:block;text-align:center;color:var(--soft);margin-bottom:14px}
+.row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--line)}
+.total{display:flex;justify-content:space-between;font-size:20px;font-weight:700;margin-top:14px}
+.paid{margin-top:14px;background:var(--mint);color:var(--deep);text-align:center;padding:8px;border-radius:4px;font-weight:700}
+.band{background:var(--mint);border-block:1px solid var(--line)}
+section{padding:72px 0}
+section h2{font-size:clamp(30px,4.4vw,44px);max-width:16em;margin-bottom:36px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.feat{padding:22px 0;border-top:1.5px solid var(--ink)}
+.feat h3{font-size:23px;margin-bottom:6px}
+.feat p,.two p{color:var(--soft)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.two h2{margin-bottom:16px}
+.price{background:var(--ink);color:#fff;border-radius:12px;padding:32px}
+.price h3{font-size:28px;margin-bottom:12px}
+.price p{color:#CFE3D7}
+.price ul{margin:18px 0 0;padding:0;list-style:none}
+.price li{padding:8px 0;border-top:1px solid #2F4A3D}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:16px;border-top:1.5px solid var(--green)}
+.steps li::before{content:counter(s);display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;color:var(--green);line-height:1}
+.steps h3{font-size:21px;margin:10px 0 4px}
+.steps p{color:var(--soft)}
+.who{border-top:1.5px solid var(--ink);padding-top:22px;max-width:46em}
+.who h3{font-size:23px;margin-bottom:8px}
+.who p{color:var(--soft)}
+.final{text-align:center}
+.final h2{margin-inline:auto}
+.final p{color:var(--soft);margin:-16px auto 28px;max-width:30em}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:800px){.hero,.two{grid-template-columns:1fr}.feats,.steps{grid-template-columns:1fr}.hero{padding-top:24px}.ticket{transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#"><svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1F9D62"/><rect x="16" y="10" width="32" height="10" rx="2" fill="#fff"/><rect x="26" y="20" width="10" height="4" fill="#fff"/><rect x="9" y="24" width="46" height="22" rx="4" fill="#fff"/><g fill="#1F9D62"><circle cx="20" cy="31" r="2.4"/><circle cx="32" cy="31" r="2.4"/><circle cx="44" cy="31" r="2.4"/><circle cx="20" cy="39" r="2.4"/><circle cx="32" cy="39" r="2.4"/><circle cx="44" cy="39" r="2.4"/></g><rect x="9" y="50" width="46" height="6" rx="3" fill="#fff"/></svg>OZYRIS <span>POS</span></a>
+<a class="btn" href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20OZYRIS%20POS" target="_blank" rel="noopener">Escríbenos</a>
+</div></header>
+
+<main>
+<div class="wrap hero">
+<div>
+<h1>Tu punto de venta, sin mensualidades.</h1>
+<p>OZYRIS POS te ayuda a llevar ventas, productos e inventario con una herramienta clara y fácil de usar todos los días. Funciona en tu propio equipo, incluso sin internet.</p>
+<div class="cta">
+<a class="btn" href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20una%20demo%20de%20OZYRIS%20POS" target="_blank" rel="noopener">Pedir una demo por WhatsApp</a>
+<a class="btn alt" href="#funciones">Ver qué hace</a>
+</div>
+</div>
+<div class="ticket" role="img" aria-label="Ejemplo de ticket de venta en OZYRIS POS">
+<h3>Abarrotes La Esquina</h3><small>Ticket de venta</small>
+<div class="row"><span>2 Leche 1 L</span><span>$44.00</span></div>
+<div class="row"><span>1 Pan de caja</span><span>$38.00</span></div>
+<div class="row"><span>3 Refresco 600 ml</span><span>$54.00</span></div>
+<div class="row"><span>1 Huevo 12 pzas</span><span>$52.00</span></div>
+<div class="total"><span>Total</span><span>$188.00</span></div>
+<div class="paid">Cobrado</div>
+</div>
+</div>
+
+<div class="band"><section id="funciones"><div class="wrap">
+<h2>Para tiendas y pequeños comercios</h2>
+<div class="feats">
+<div class="feat"><h3>Ventas en segundos</h3><p>Busca el producto, cobra y entrega el ticket. Sin libreta ni calculadora.</p></div>
+<div class="feat"><h3>Productos e inventario</h3><p>Cada venta descuenta el producto, para que sepas qué tienes y qué te falta.</p></div>
+<div class="feat"><h3>Funciona sin internet</h3><p>Trabajas con tus datos en tu propio equipo. Si se cae el internet, tu tienda sigue vendiendo.</p></div>
+<div class="feat"><h3>Tu información es tuya</h3><p>Tienes el control de tus datos y no dependes de un servicio externo para usar tu punto de venta.</p></div>
+<div class="feat"><h3>Reportes claros</h3><p>Consulta cuánto vendiste y cómo va tu operación del día.</p></div>
+<div class="feat"><h3>Corte de caja</h3><p>Cierra el día con tus cuentas claras, sin sacar números a mano.</p></div>
+</div>
+</div></section></div>
+
+<section><div class="wrap two">
+<div>
+<h2>Una propuesta sencilla y transparente</h2>
+<p>Creemos que un negocio debe poder trabajar con sus datos en su propio equipo, con control de su información y sin depender de pagos mensuales para usar su punto de venta.</p>
+</div>
+<div class="price">
+<h3>Licencia de uso de por vida</h3>
+<p>Pagas una vez y usas OZYRIS POS sin mensualidades.</p>
+<ul>
+<li>Sin pagos mensuales</li>
+<li>Acompañamiento de soporte para la puesta en marcha y para resolver dudas</li>
+<li>Las condiciones del soporte y de las actualizaciones se acuerdan al adquirir el sistema</li>
+</ul>
+</div>
+</div></section>
+
+<div class="band"><section><div class="wrap">
+<h2>Empieza en tres pasos</h2>
+<ol class="steps">
+<li><h3>Escríbenos</h3><p>Cuéntanos de tu negocio por WhatsApp.</p></li>
+<li><h3>Instalamos y te acompañamos</h3><p>Te ayudamos con la puesta en marcha y la carga de tus productos.</p></li>
+<li><h3>Empieza a vender</h3><p>Cobra desde el primer día y resuelve tus dudas con soporte.</p></li>
+</ol>
+</div></section></div>
+
+<section><div class="wrap">
+<h2>Soluciones digitales a tu alcance</h2>
+<div class="two">
+<div class="who"><h3>Desarrollo y soluciones digitales</h3><p>Además del punto de venta, desarrollo páginas web, sistemas a la medida y herramientas digitales adaptadas a las necesidades de cada negocio.</p></div>
+<div class="who"><h3>Desarrolladora</h3><p><strong>María de Jesús García de Anda</strong>. Desarrolladora Full Stack con enfoque en Frontend, formada en Tecnologías de la Información</p></div>
+</div>
+</div></section>
+
+<div class="band"><section class="final"><div class="wrap">
+<h2>Lleva tu negocio con OZYRIS POS.</h2>
+<p>Pide una demo y mira cómo funciona con tus propios productos.</p>
+<a class="btn" href="https://wa.me/524741120595?text=Hola%2C%20quiero%20una%20demo%20de%20OZYRIS%20POS" target="_blank" rel="noopener">Pedir una demo por WhatsApp</a>
+</div></section></div>
+</main>
+
+<footer><div class="wrap"><span>OZYRIS POS · Soluciones digitales a tu alcance</span><span>© 2026 OZYRIS. Todos los derechos reservados.</span></div></footer>
+</body>
+</html>
